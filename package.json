@@ -8,7 +8,9 @@
     "start": "webpack serve",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack serve",
-    "build": "webpack"
+    "build": "webpack",
+    "build:server": "webpack --config=webpack.config.js --env platform=server",
+    "build:client": "webpack --config=webpack.config.js --env platform=client"
   },
   "license": "ISC",
   "devDependencies": {

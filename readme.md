@@ -1,5 +1,14 @@
-// to build app
-npm run build
+// to install dependencies
+npm install
 
-// to start app
-npm start
+// to build app on server
+npm run build:server
+
+// to build app on client
+// npm run build:client
+
+// to start app on client
+npm run start
+
+// to start app on server
+node dist/server.js

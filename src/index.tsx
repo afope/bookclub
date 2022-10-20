@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 import { SignUp } from './components/signup';
 
-ReactDOM.render(
+ReactDOM.hydrate(
   <div>
     <h1>Hello, welcome to adiBookClub</h1>
     <SignUp />
