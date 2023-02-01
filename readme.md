@@ -12,3 +12,6 @@ npm run start
 
 // to start app on server
 node dist/server.js
+
+// to run backend 
+ **node backend/server.js**
