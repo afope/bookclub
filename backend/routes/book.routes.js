@@ -1,18 +1,35 @@
+const { authJwt } = require('../middlewares')
+const controller = require('../controllers/book.controller')
 
-app.post('/api/books/add/:id', [authJwt.verifyToken], controller.addBook)
+module.exports = function(app) {
 
-app.get('/api/books/getBookImage', [authJwt.verifyToken], controller.getBookImage)
+    app.use(function (req, res, next) {
+		res.header(
+			'Access-Control-Allow-Headers',
+			'Origin, Content-Type, Accept'
+		)
+		next()
+	})
 
-app.get('/api/books/:id', [authJwt.verifyToken], controller.getBook)
+    app.post('/api/books/add', [authJwt.verifyToken], controller.addBook)
 
-app.post('/api/books/comment/:id', [authJwt.verifyToken], controller.commentBook)
+    app.get('/api/books/', [authJwt.verifyToken], controller.getAllBooks)
 
-app.post('/api/books/voteBookOfTheMonth/:id', [authJwt.verifyToken], controller.voteBookofTheMonth)
+    app.get('/api/book/:id', [authJwt.verifyToken], controller.getBook)
 
-app.get('/api/books/getAllSuggestedBooksForTheMonth', [authJwt.verifyToken], controller.getAllBooks)
+    app.post('/api/books/searchBook', [authJwt.verifyToken], controller.searchBook)
 
 
-app.post('/api/books/suggestBookForTheMonth/:id', [authJwt.verifyToken], controller.suggestBookOfTheMonth)
+    // app.get('/api/books/getBookImage', [authJwt.verifyToken], controller.getBookImage)
+
+    // app.post('/api/books/comment/:id', [authJwt.verifyToken], controller.commentBook)
+
+    // app.post('/api/books/voteBookOfTheMonth/:id', [authJwt.verifyToken], controller.voteBookofTheMonth)
+
+    // app.get('/api/books/getAllSuggestedBooksForTheMonth', [authJwt.verifyToken], controller.getAllBooks)
+
+    // app.post('/api/books/suggestBookForTheMonth/:id', [authJwt.verifyToken], controller.suggestBookOfTheMonth)
+}
 
 
 
