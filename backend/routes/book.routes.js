@@ -19,14 +19,15 @@ module.exports = function(app) {
 
     app.post('/api/books/searchBook', [authJwt.verifyToken], controller.searchBook)
 
-
     // app.get('/api/books/getBookImage', [authJwt.verifyToken], controller.getBookImage)
 
     // app.post('/api/books/comment/:id', [authJwt.verifyToken], controller.commentBook)
 
+    // app.post('/api/books/star/:id', [authJwt.verifyToken], controller.starBook)
+
     // app.post('/api/books/voteBookOfTheMonth/:id', [authJwt.verifyToken], controller.voteBookofTheMonth)
 
-    // app.get('/api/books/getAllSuggestedBooksForTheMonth', [authJwt.verifyToken], controller.getAllBooks)
+    // app.get('/api/books/getAllSuggestedBooksForTheMonth', [authJwt.verifyToken], controller.getAllSuggestedBooksForTheMonth)
 
     // app.post('/api/books/suggestBookForTheMonth/:id', [authJwt.verifyToken], controller.suggestBookOfTheMonth)
 }

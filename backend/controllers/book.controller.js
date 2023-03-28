@@ -39,12 +39,12 @@ exports.searchBook = async (req, res, next) => {
 	const filteredBooks = books.filter(book => {
 		let isValid = true;
 		for (key in filters) {
-			console.log('key', book[key], filters[key])
-			isValid = isValid && book[key] == filters[key]
+			console.log('key', book.title[key], filters[key])
+			isValid = isValid && book.title[key].toLowerCase() == filters[key].toLowerCase()
 		}
 		return isValid;
 	})
-	res.send(filteredBooks)
+	res.status(200).json(filteredBooks)
 }
 
 exports.getAllBooks = async (req, res, next) => {
